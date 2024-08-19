@@ -50,3 +50,28 @@ if (markHigherBMI(Marks2, John2)) {
 } else {
   console.log("John has higher BMI than Mark");
 }
+
+
+// Coding Challenge #2
+
+take_decimal_number_2 = function (object){
+    return Math.round(object * 10) / 10;
+}
+console.log("Exercise 2");
+
+printResult = function (o1,o2){
+    return markHigherBMI(o1,o2) ? console.log("Mark's BMI is higher than John's!") : console.log("John's BMI is higher than Mark's!");
+}
+
+printResultBMI = function (o1,o2){
+    return markHigherBMI(o1,o2) ? console.log("Mark's BMI (" + take_decimal_number_2(bmi(o1)) + ") is higher than John's(" + take_decimal_number_2(bmi(o2)) + ") !") : console.log("John's BMI (" + take_decimal_number_2(bmi(o2)) + ") is higher than Mark's(" + take_decimal_number_2(bmi(o1))+ ")!");
+}
+
+console.log("Data 1");
+printResult(Marks1,John1);
+printResultBMI(Marks1,John1);
+
+console.log("Data 2");
+printResult(Marks2,John2);
+printResultBMI(Marks2,John2);
+
