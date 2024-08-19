@@ -114,3 +114,18 @@ getWinner = function (team1,team2){
 console.log("Data 1 : " + getWinner(Dolphins1,Koalas1));
 console.log("Data Bonus 1 : " + getWinner(Dolphins2,Koalas2));
 console.log("Data Bonus 2 : " + getWinner(Dolphins3,Koalas3));
+
+// Coding Challenge #4
+
+console.log("Exercise 4");
+
+bill = [275, 40, 430]
+
+getTip = (cost) => {
+    return cost >= 50 && cost <= 300 ? cost * 0.15 : cost * 0.2;
+}
+
+for(let i = 0;i<bill.length;i++){
+    console.log("The bill was " + bill[i] + ", the tip was " + getTip(bill[i]) + ", and the total value " + (bill[i] + getTip(bill[i])));
+}
+
