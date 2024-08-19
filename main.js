@@ -129,3 +129,38 @@ for(let i = 0;i<bill.length;i++){
     console.log("The bill was " + bill[i] + ", the tip was " + getTip(bill[i]) + ", and the total value " + (bill[i] + getTip(bill[i])));
 }
 
+//JAVASCRIP FUNDAMENTALS - PART 2
+
+// Coding Challenge #1
+
+console.log("Exercise 1");
+
+calcAverage = (score1,score2,score3) => {
+    return (score1 + score2 + score3) / 3;
+}
+
+checkWinner = (avgDolphins,avgKoalas) => {
+    return avgKoalas >= 2 * avgDolphins ?  `Dolphins win(${avgDolphins} vs ${avgKoalas})`: `Koalas win(${avgKoalas} vs ${avgDolphins})`;
+}
+
+console.log("Data 1 : " + checkWinner(calcAverage(44,23,71),calcAverage(65,54,49)));
+console.log("Data 2 : " + checkWinner(calcAverage(85,54,41),calcAverage(23,34,27)));
+
+// Coding Challenge #2
+
+console.log("Exercise 2");
+calcTip =  (cost) => {
+  return cost >= 50 && cost <= 300 ? cost * 0.15 : cost * 0.2;
+}
+
+bills = [125,555,44];
+
+tips = [calcTip(bills[0]),calcTip(bills[1]),calcTip(bills[2])];
+
+total = [bills[0] + tips[0],bills[1] + tips[1],bills[2] + tips[2]];
+
+for(let i = 0;i<bills.length;i++){
+    console.log(`The bill was ${bills[i]}, the tip was ${tips[i]}, and the total value ${total[i]}`);
+}
+
+
