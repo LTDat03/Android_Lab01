@@ -1,3 +1,5 @@
+// JAVASCRIPT FUNDAMENTALS - PART 1
+
 // Coding Challenge #1
 
 console.log("Exercise 1");
@@ -75,3 +77,40 @@ console.log("Data 2");
 printResult(Marks2,John2);
 printResultBMI(Marks2,John2);
 
+// Coding Challenge #3
+
+console.log("Exercise 3");
+
+Dolphins1 = [96,108,89]
+Koalas1 = [88,91,110]
+
+Dolphins2 = [97,112,101]
+Koalas2 = [109,95,123]
+
+Dolphins3 = [97,112,101]
+Koalas3 = [109,95,106]
+
+getAvgTeam = function (team){
+    let sum = 0;
+    for (let i = 0; i < team.length; i++){
+        sum += team[i];
+    }
+    return sum / team.length;
+}
+
+getWinner = function (team1,team2){
+    let avgTeam1 = getAvgTeam(team1);
+    let avgTeam2 = getAvgTeam(team2);
+
+    if (avgTeam1 < 100 && avgTeam2 < 100){
+        return "No team win!";
+    }else if (avgTeam1 == avgTeam2){
+        return "Draw";
+    }else{
+        return avgTeam1 > avgTeam2 ? "Dolphins win" : "Koalas win";
+    }
+}
+
+console.log("Data 1 : " + getWinner(Dolphins1,Koalas1));
+console.log("Data Bonus 1 : " + getWinner(Dolphins2,Koalas2));
+console.log("Data Bonus 2 : " + getWinner(Dolphins3,Koalas3));
