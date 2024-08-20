@@ -74,3 +74,35 @@ console.log(
         calcBMI(John)
       )}) is higher than Mark's BMI (${take_decimal_number_2(calcBMI(Mark))})`
 );
+
+// Coding Challenge #4
+
+console.log("Exercise 4");
+
+billsSecond = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+tipsSecond = [];
+
+totalsSecond = [];
+
+for (let i = 0; i < billsSecond.length; i++) {
+  tipsSecond.push(calcTip(billsSecond[i]));
+
+  totalsSecond.push(billsSecond[i] + billsSecond[i]);
+
+  console.log(
+    `The bill was ${billsSecond[i]}, the tip was ${tipsSecond[i]}, and the total value ${totalsSecond[i]}`
+  );
+}
+
+sum = 0;
+
+calcAverageSecond = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+}
+
+calcAverageSecond(totalsSecond);
+
+console.log(`The average of the total values is ${sum / totalsSecond.length}`);
