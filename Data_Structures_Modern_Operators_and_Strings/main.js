@@ -1,3 +1,8 @@
+// Data Structures, Modern Operators and Strings
+
+
+// Coding Challenge #1
+
 const game = {
   team1: "Bayern Munich",
   team2: "Borrussia Dortmund",
@@ -61,4 +66,32 @@ printGoals(...game.scored);
 const likelyWinner = team1 < team2 && game.team1 || game.team2;
 console.log(`The team more likely to win is: ${likelyWinner}`);
 
+// Coding Challenge #2
 
+console.log('Coding Challenge #2');
+
+for (const [i, player] of game.scored.entries()){
+  console.log(`Goal ${i + 1}: ${player}`);
+}
+
+const odds = Object.values(game.odds);
+let averageOdd = 0;
+
+for (const odd of odds) {
+  averageOdd += odd;
+}
+averageOdd /= odds.length;
+console.log(`Average odd: ${averageOdd}`);
+
+for (const [team,odd] of Object.entries(game.odds)){
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
+}
+
+scorers = {};
+
+for (player of game.scored){
+  scorers[player] ? scorers[player]++ : scorers[player] = 1;
+}
+
+console.log(scorers);
