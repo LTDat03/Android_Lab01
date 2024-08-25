@@ -127,5 +127,24 @@ for ([min, event] of gameEvents){
   console.log(`[${min <= 45 ? 'FIRST HALF' : 'SECOND HALF'}] ${min}: ${event}`);
 }
 
+// Coding Challenge #4
 
+console.log('Coding Challenge #4');
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('br'));
+document.body.append(document.createElement('button'));
+
+const button = document.querySelector('button');
+button.textContent = 'Click to convert';
+
+button.addEventListener('click', function(){
+  const textInput = document.querySelector('textarea').value;
+  const rows = textInput.split('\n');
+  for (const [i, row] of rows.entries()){
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+});
 
