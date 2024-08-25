@@ -41,3 +41,17 @@ data2  = [16, 6, 10, 5, 6, 1, 4];
 console.log(calcAverageHumanAge(data1));
 console.log(calcAverageHumanAge(data2));
 
+
+// Coding challenge #3
+
+calcAverageHumanAgeRewrite = (ages) => {
+    return ages.map(age => age <= 2 ? age * 2 : 16 + age * 4)
+               .filter(age => age >= 18)
+               .reduce((acc, age, _, arr) => acc + age / arr.length, 0);
+}
+
+Data1 = [5, 2, 4, 1, 15, 8, 3];
+Data2 = [16, 6, 10, 5, 6, 1, 4];
+
+console.log(calcAverageHumanAgeRewrite(Data1));
+console.log(calcAverageHumanAgeRewrite(Data2));
