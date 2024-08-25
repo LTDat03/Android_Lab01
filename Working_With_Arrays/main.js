@@ -23,3 +23,21 @@ dataKateSecond = [10, 5, 6, 1, 4];
 checkDogs(dataJuliaFirst, dataKateFirst);
 
 checkDogs(dataJuliaSecond, dataKateSecond);
+
+
+// Coding challenge #2
+
+calcAverageHumanAge = (ages) => {
+    ages.forEach((age,i) => {
+        ages[i] = age <= 2 ? age * 2 : 16 + age * 4; 
+    })
+    const adults = ages.filter(age => age >= 18);
+    return adults.reduce((acc, age) => acc + age, 0) / adults.length;
+} 
+
+data1 = [5, 2, 4, 1, 15, 8, 3];
+data2  = [16, 6, 10, 5, 6, 1, 4];
+
+console.log(calcAverageHumanAge(data1));
+console.log(calcAverageHumanAge(data2));
+
