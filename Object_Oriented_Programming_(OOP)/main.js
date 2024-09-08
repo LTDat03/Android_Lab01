@@ -60,3 +60,39 @@ console.log(carCl.speedUS);
 carCl.speedUS = 50;
 
 console.log(carCl);
+
+// Coding Challenge #3
+
+console.log('Coding Challenge #3');
+
+class EV {
+    constructor(make,speed,charge){
+        Car.call(this,make,speed);
+        this.charge = charge;
+    }
+
+    chargeBattery(chargeTo){
+        this.charge = chargeTo;
+        console.log(`${this.make} is charging at ${this.charge}%`);
+    }
+
+    accelerate(){
+        this.speed += 20;
+        this.charge -= 1;
+        console.log(`${this.make} is going at ${this.speed} km/h with a charge of ${this.charge}%`);
+    }
+
+    brake(){
+        this.speed -= 10;
+        console.log(`${this.make} is going at ${this.speed} km/h with a charge of ${this.charge}%`);
+    }
+}
+
+const tesla = new EV('Tesla',120,23);
+
+tesla.accelerate();
+tesla.brake();
+tesla.chargeBattery(90);
+console.log(tesla);
+tesla.accelerate();
+
